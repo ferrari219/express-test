@@ -1,2 +1,4 @@
 node_modules
-config
+config/config.js
+config/express_prod.js
+config/express_dev.js
