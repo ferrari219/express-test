@@ -14,6 +14,9 @@ const sequelize = new Sequelize(
 );
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-db.Board = require('./Board')(sequelize, Sequelize);
-// db.User = require('./User')(sequelize, Sequelize);
+const Board = require('./Board')(sequelize, Sequelize);
+const User = require('./User')(sequelize, Sequelize);
+// User.hasMany(Board, { as: 'BoardId' });
+db.User = User;
+db.Board = Board;
 module.exports = db;
